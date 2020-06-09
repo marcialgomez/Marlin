@@ -35,7 +35,11 @@
   #define FLASH_EEPROM_EMULATION
   #define EEPROM_PAGE_SIZE     (0x800U) // 2KB
   #define EEPROM_START_ADDRESS (0x8000000UL + (STM32_FLASH_SIZE) * 1024UL - (EEPROM_PAGE_SIZE) * 2UL)
+  //#define EEPROM_START_ADDRESS (0x8000000UL + (STM32_FLASH_SIZE) * 2048UL - (EEPROM_PAGE_SIZE) * 2UL)
   #define MARLIN_EEPROM_SIZE    EEPROM_PAGE_SIZE  // 2KB
+  // This is a total hack
+  //#warning "Enabling dburr's SD_EEPROM_EMULATION hack"
+  //#define SD_EEPROM_EMULATION
 #endif
 
 //
@@ -238,3 +242,4 @@
 
 #define ON_BOARD_SPI_DEVICE 1                     // SPI1
 #define ONBOARD_SD_CS_PIN                   PA4   // Chip select for "System" SD card
+
